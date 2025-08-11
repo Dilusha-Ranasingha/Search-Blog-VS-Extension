@@ -9,7 +9,8 @@ const { XMLParser } = require('fast-xml-parser');
 async function activate(context) {
 	const res = await axios.get("https://blog.webdevsimplified.com/rss.xml")
 	const parser = new XMLParser();
-	console.log(parser.parse(res.data))
+	const articles = parser.parse(res.data).rss.channel.item;
+	console.log(articles)
 
 	const disposable = vscode.commands.registerCommand('nd-search-blog.NDSearchBlog', function () {
 		vscode.window.showInformationMessage('Hello World from ND Search Blogs!');
