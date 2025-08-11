@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "nd-search-blog.helloWorld",
-        "title": "Hello World"
+        "command": "nd-search-blog.NDSearchBlog",
+        "title": "ND Search Blogs"
       }
     ]
   },
