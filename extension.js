@@ -9,11 +9,19 @@ const { XMLParser } = require('fast-xml-parser');
 async function activate(context) {
 	const res = await axios.get("https://blog.webdevsimplified.com/rss.xml")
 	const parser = new XMLParser();
-	const articles = parser.parse(res.data).rss.channel.item;
+	const articles = parser.parse(res.data).rss.channel.item.map(
+		article => ({
+			label: article.title,
+			detail: article.link
+		})
+	)
 	console.log(articles)
 
-	const disposable = vscode.commands.registerCommand('nd-search-blog.NDSearchBlog', function () {
-		vscode.window.showInformationMessage('Hello World from ND Search Blogs!');
+	const disposable = vscode.commands.registerCommand('nd-search-blog.NDSearchBlog', async function () {
+		const article = await vscode.window.showQuickPick(articles, {
+			matchOnDetail: true
+		})
+		console.log(article)
 	});
 
 	context.subscriptions.push(disposable);
