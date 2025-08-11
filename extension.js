@@ -22,7 +22,9 @@ async function activate(context) {
 		const article = await vscode.window.showQuickPick(articles, {
 			matchOnDetail: true
 		})
-		console.log(article)
+		
+		if (article == null) return
+		vscode.env.openExternal(article.link);
 	});
 
 	context.subscriptions.push(disposable);
