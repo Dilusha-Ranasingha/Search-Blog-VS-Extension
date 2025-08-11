@@ -12,7 +12,8 @@ async function activate(context) {
 	const articles = parser.parse(res.data).rss.channel.item.map(
 		article => ({
 			label: article.title,
-			detail: article.link
+			detail: article.description,
+			link: article.link
 		})
 	)
 	console.log(articles)
