@@ -3,7 +3,7 @@
   "displayName": "ND Search Blog",
   "publisher": "NDRanasinghe",
   "description": "The blog search using the ND extention",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.103.0"
   },
