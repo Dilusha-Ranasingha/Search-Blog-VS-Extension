@@ -3,13 +3,14 @@
   "displayName": "ND Search Blog",
   "publisher": "NDRanasinghe",
   "description": "The blog search using the ND extention",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.103.0"
   },
   "categories": [
     "Other"
   ],
+  "icon": "images/icon.png",
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
